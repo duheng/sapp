@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="Author" contect="awen"/ >  
+	
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">  
+	<!--启用web app。添加至主屏后，从主屏进入会隐藏地址栏和状态栏-->  
+	<!--默认值为default（白色），可以定为black（黑色）和black-translucent（灰色半透明）。  
+	注意： 若值为“black-translucent”将会占据页面px位置，浮在页面上方（会覆盖页面20px高度–iphone4和itouch4的Retina屏幕为40px）。-->  
+	  
+	<link rel="apple-touch-icon" sizes="72x72" href="icon72x72.png">  
+	<link rel="apple-touch-icon" sizes="114x114" href="icon114x114.png">  
+	<link rel="apple-touch-icon" href="icon.png" />  
+	<link rel="apple-touch-icon-precomposed" href="icon.png" />  
+	<!--iOS用rel="apple-touch-icon"增加高光光亮的图标,rel="apple-touch-icon-precomposed"设计原图图标，另，android也能读取该图标。这样就能在用户把网页存为书签时，在手机HOME界面创建应用程序样式的图标。该路径需要注意的就是放到将网站的文档根目录下但不是服务器的文档的根目录。图片尺寸可以设定为57*57（px）或者Retina可以定为114*114（px），ipad尺寸为72*72（px）-->  
+  
+	<link rel="apple-touch-startup-image" href="startup.png" />  
+	<!--启动界面的图片。该路径需要注意的就是放到将网站的文档根目录下但不是服务器的文档的根目录。官方规定启动界面的尺寸必须为 320*640（px），原本以为Retina屏幕可以支持双倍，但是不支持，图片显示不出来。-->  
+	  
+	<!--<meta name="apple-touch-fullscreen" content="yes">-->  
+	<!--这meta的作用就是删除默认的苹果工具栏和菜单栏。content有两个值”yes”和”no”,当我们需要显示工具栏和菜单栏时，这个行meta就不用加了，默认就是显示。-->  
+
+	<meta content="telephone=no" name="format-detection" />      
+	<meta content="email=no" name="format-detection" />
+	<!-- 告诉设备忽略将页面中的数字识别为电话号码和email -->
+	  
+	<!--<meta name="HandheldFriendly" content="true" />-->  
+	<!--针对plam和黑莓手机的设置-->  
+	  
+	<!--<meta name="MobileOptimized" content="width">-->  
+	<!--这个标记，有说是windows mobile的，也有说其它的，但是似乎没怎么用-->  
+
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+	<title>sapp demo</title>
+	<!-- 样式 -->
+	<link rel="stylesheet" href="../dist/css/sapp.min.css">
+ 	<!--载入引擎-->
+  <script src="../dist/js/sapp.min.js"></script>
+  <script src="../dist/js/sapp.plus.min.js"></script>
+  <!--载入应用配置文件和自定义函数-->
+  <script src="demo.js"></script>
+  <!--入口-->
+	<script>
+		$(function(){
+			sApp.go(Config);	//Config 在demo中
+		});
+	</script>
+</head>
+<body>
+<!-- 导航部分，这些地方用户可以自己写，非sApp内容，这里做测试-->
+	<nav class="nav">
+		<ul>
+			<li><a href="javascript:sApp.Page.back()">返回</a></li>
+			<li><a href="javascript:sApp.Page.show('page_main')">首页</a></li>
+			<li><a href="javascript:sApp.Page.show('page_list',{page:1})">列表页</a></li>
+		</ul>
+	</nav>
+<!-- 页面部分 -->
+	<section class="sapp_page_wrap">
+		<section id="page_main">
+			<article id="part_main"  class="sapp_render" style="height:100%;"></article>
+		</section>
+		<section id="page_list">
+			<article id="part_list" style="height:200px;"></article>
+			<article id="part_more" style="height:150px;"></article>
+		</section>
+	</section>
+</html>

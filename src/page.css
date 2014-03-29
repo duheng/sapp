@@ -1,0 +1,22 @@
+.nav{
+ 	position: fixed;
+ 	top: 0;
+ 	left: 0;
+ 	right: 0;
+ 	height: 50px;
+ 	line-height: 50px;
+ 	background-color: #ccc;
+ 	z-index:51;
+ }
+ .nav>ul>li{
+	display: inline-block;
+	min-width: 50px;
+	text-align: center;
+ }
+ .sapp_page_wrap{
+ 	position: absolute;
+ 	top: 50px;
+ 	left: 0;
+ 	bottom: 0;
+ 	width: 100%;
+ }

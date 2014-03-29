@@ -1,0 +1,129 @@
+.mgb10{
+	margin-bottom: 10px;
+}
+
+#part_catelist article{
+	width:150px;
+	display: inline-block;
+	box-sizing:border-box;
+}
+.btn_gradient1{
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 1px rgba(255,255,255,.5), inset 0 1px rgba(0,0,0,.1);
+	box-shadow: 0 1px rgba(255,255,255,.5), inset 0 1px rgba(0,0,0,.1);
+	background-image: -webkit-linear-gradient(bottom, #d1d1d1, #dcdcdc 15%);
+	background-image: linear-gradient(to top, #d1d1d1, #dcdcdc 15%);
+}
+.btn_gradient1.on{
+	-webkit-box-shadow: 0 1px rgba(255,255,255,.5), inset 0 1px rgba(0,0,0,.1);
+	box-shadow: 0 1px rgba(255,255,255,.5), inset 0 1px rgba(0,0,0,.1);
+	background-image: -webkit-linear-gradient(bottom, #c4c4c4, #ccc9c9);
+	background-image: linear-gradient(to top, #c4c4c4, #ccc9c9);
+}
+#part_catelist article ul>li,#part_catelist figure li,.packs_list article ul>li{
+	width:152px;
+	margin:0 auto;
+	overflow:hidden;
+	position: relative;
+}
+#part_catelist article ul>li:first-child,.packs_list article ul>li:first-child{
+	height:162px;
+	overflow:hidden;
+}
+#part_catelist article ul>li>img,#part_catelist figure img,#part_catelist figure ul>li>img,.packs_list article ul>li>img{
+	border: 2px solid #CCC;
+	vertical-align: top;
+	height: 150px;
+}
+#part_catelist article ul>li:nth-child(2),#part_catelist figure>li:nth-child(2),.packs_list article ul>li:nth-child(2){
+	line-height: 20px;
+	height: 40px;
+	overflow: hidden;
+}
+/*#part_catelist article ul ol li:last-child span{
+	background-image:url(../i/active_buy.png);
+	height: 30px;
+	display: block;
+	width: 44px;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+}*/
+/*.sdown:after,.fullgifts:after,.fullcut:after,.promotions:after,.limited:after,.buygifts:after,.discount:after,.packs_shop:after{
+	-webkit-transform:translateZ(0);
+	background-image: url(../i/sprite.png);
+	content:'.';
+	text-indent:-999em;
+	position: absolute;
+	top:0;
+	right:0;
+	height:39px;
+	width:39px;
+}*/
+/*.sdown:after{
+	background-position:-181px -244px;
+}*//*直降*/
+/*.fullgifts:after{
+	background-position:-256px -244px;
+}*//*满赠*/
+/*.fullcut:after{
+	background-position:0 -319px;
+}*//*满减*/
+/*.promotions:after{
+	background-position:-182px -244px;
+}*//*促销*/
+/*.limited:after{
+	background-position:-182px -244px;
+}*//*限时抢购*/
+/*.buygifts:after{
+	background-position:-76px -319px;
+}*//*买赠*/
+/*.discount:after{
+	background-position:-154px -319px;
+}*//*折扣*/
+
+.sdown:after,.gifts_noshop:after,.fullgifts:after,.fullcut:after,.promotions:after,.limited:after,.buygifts:after,.discount:after,.packs_shop:after,.increase_shop:after,.spike_shop:after,.lack_shop:after{
+	position:absolute;
+	background-color:#ffb842;
+	color:#930;
+	font-size:12px;
+	font-weight:900;
+	-webkit-transform:rotate(45deg);
+	text-align: center;
+	padding-top: 42px;
+	top: -30px;
+	right: -30px;
+	width: 60px;
+	height: 18px;
+}
+.packs_shop:after{
+	content:'礼包';
+}/*礼包*/
+.sdown:after{
+	content:'直降';
+}/*直降*/
+.fullgifts:after{
+	content:'满赠';
+}/*满赠*/
+.fullcut:after{
+	content:'满减';
+}/*满减*/
+.buygifts:after{
+	content:'买赠';
+}/*买赠*/
+.discount:after{
+	content:'折扣';
+}/*折扣*/
+.lack_shop:after,.gifts_noshop:after{
+	content:'缺货';
+	background-color:#ccc;
+}/*缺货*/
+.spike_shop:after{
+	content:'秒杀';
+}/*秒杀*/
+.increase_shop:after{
+	content:'加价购';
+	letter-spacing:-2px;
+}/*加价购*/
+

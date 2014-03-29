@@ -1,0 +1,49 @@
+﻿一 目录结构：
+   文件夹:
+	assets  	资源文件目录，如image,css,js
+	core		sApp内核所在位置,请勿擅动
+	tpl			模板文件所在位置
+	test		开发测试代码所在位置
+   文件:
+	config.js	应用配置文件(后期可在配置页面自动生成)
+	index.html	app入口页面
+	readme.txt	说明文档
+	
+
+
+========================================================
+sApp html5应用框架
+Version	:1.0
+author	:build by awen ~ 71752352@qq.com ~ 2013-10-10
+结构		:sApp
+				|__Core	*		(引擎内核，不对外开放)
+				|__FSM			(有限循环状态机)
+				|__Config		(配置文件)
+				|__Langs		(语言包)
+				|__Dao			(数据接口)
+				|__Cache		(数据缓存)
+				|__UI			(页面控件集合)
+					|__Dialog	(对话框)
+					|__Mask		(蒙版)
+				|__Page			(页面控制)
+				|__Util			(常用工具集)
+					
+				|__Env			(设备信息)
+				|__Plus			(扩展以及插件集合)
+					|__sImageLazyLoad	(图片懒加载）
+					|__Slider			(无限循环幻灯)
+					|__Scroll			(滚动条插件)
+					|__Timer			(心跳机)
+					|__Storage			(localStorage本页变化监控实现)
+
+descr : 
+
+	1 资源加载在内核中自动执行，属于引擎初始化工作
+	2 滚动条支持iscroll和下一页按钮，更好的兼容低端机
+	3 数据请求支持缓存，和强刷
+	4 页面切换多种动画
+	5 图片懒加载更加智能，智能监控iscroll和window滚动条
+	6 状态机机制 流程更加清晰，让写代码按流程来写
+	7 实现aop，灵活的插件，log
+	8 多语言实现，只需要 重写 sApp.Langs 语言对象就可以了
+	9 localStorage实现本页面监控，暂时不做使用，预留

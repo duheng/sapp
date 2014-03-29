@@ -1,0 +1,84 @@
+<!--
+descr : 模板文件,页面的模板id为页面id加上'_tpl'后缀,因为是异步获取，请尽量不要加script之外的标签
+-->
+<!-- 列表 -->
+<script id="part_list_tpl" type="text/html">
+	<div>
+			<span><%=data.page%></span>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			part_main_tpl<br>
+			<%=code%>
+			<%=msg%>
+	</div>
+</script>
+<script id="part_more_tpl" type="text/html">
+		part_tech<br>
+		part_tech<br>
+		part_tech<br>
+		part_tech<br>
+		part_tech<br>
+		part_tech<br>
+		part_tech<br>
+	<a href='javascript:sApp.Page.show("page_list")'>go to page_list</a>
+</script>
+<!-- 首页 -->
+<script id="part_main_tpl" type="text/html">
+	<div id="slider_main">
+		<ul>
+			<%for(var i = 0; i < data.slider.length; i ++) {%>
+			<li><img src="<%=data.slider[i].picurl%>" alt="" width="100%" height="180"></li>
+			<%}%>
+		</ul>
+	</div>
+	<hr>
+	<ul>
+		<%for(var i = 0; i < data.hots.length; i ++) {%>
+		<li><%=data.hots[i]%></li>
+		<%}%>
+	</ul>
+</script>
+<!-- 分类列表 -->
+<script id="part_catelist_tpl" type="text/html">
+	<%if(data[0].items&&data[0].items.length>0){for(var i=0;i<data[0].items.length;i++){%>
+		<article>
+			<ul class="mgb10"  productId="<%=data[0].items[i].id%>" >
+				<li  class="rel <%if('1'==data[0].items[i].promotionType){%>buygifts<%} else if('2'==data[0].items[i].promotionType){%>discount <%}else if('3'==data[0].items[i].promotionType){%> fullcut <%} else if('4'==data[0].items[i].promotionType){%> fullgifts <%}else if(data[0].items[i].type==3){%> packs_shop <%}%>" >
+					<img class="mgb10" src="" data-isrc="<%=data[0].items[i].img_260%>" width="150" />
+				</li>
+				<li class="ellips_line2"><%=data[0].items[i].name%></li>
+				<li class="c_db lineh30 listpirce">￥<%=data[0].items[i].salePrice%></li>
+			</ul>
+		</article>
+	<%}}%>
+</script>
+<script id="part_catelist_tpl1" type="text/html">
+	<%if(data[0].items&&data[0].items.length>0){for(var i=0;i<data[0].items.length;i++){%>
+		<article style="width:100%">
+			<ul class="mgb10"  productId="<%=data[0].items[i].id%>" >
+				<li  class="rel" >
+					<img class="mgb10" src="<%=data[0].items[i].img_260%>" data-isrc="" width="150" />
+				</li>
+				<li class="ellips_line2"><%=data[0].items[i].name%></li>
+				<li class="c_db lineh30 listpirce">￥<%=data[0].items[i].salePrice%></li>
+			</ul>
+		</article>
+	<%}}%>
+</script>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>sapp</title>
+	<style type="text/css">
+		body{
+			overflow: hidden;
+		}
+		.hide{
+			display: none;
+			height: 300px;
+			border:1px dotted #04f;
+		}
+		.page{
+			width: 100%;
+			height: 100%;
+			border: 2px solid #f40;
+	 		background-color: #ccc;
+			box-sizing:border-box;
+		}
+		#page1 {
+			background-color: #fff;
+		}
+		#page2 {
+			background-color: #f03;
+		}
+		#page3 {
+			background-color: #0ff;
+		}
+		.floatbar{
+			position: fixed;
+			z-index: 100;
+			border:1px solid #ccc;
+			top: 300px;
+		}
+		.btn1,.btn2{
+			background-color: #03f;
+			color: #fff;
+			width: 60px;
+			height: 30px;
+			line-height: 30px;
+		}
+	</style>
+	<script src="../core/sapp.core.js"></script>
+	
+	<script src="../core/sapp.page.js"></script>
+	<script src="../core/sapp.dao.js"></script>
+	<script src="../core/sapp.util.js"></script>
+	<script src="../core/sapp.util.localstorage.js"></script>
+	<script src="../core/quo.debug.js"></script>
+</head>
+<body>
+	<div id="page1" class="page">page1</div>
+	<div id="page2" class="page">page2</div>
+	<div id="page3" class="page">page3</div>
+	<div id="page4" class="page">page4</div>
+
+	<div class="floatbar">
+		<div id="info"></div>
+		<select class='sel1'>
+			<option value="0">TRANS_NONE</option>
+			<option value="1">TRANS_FADE</option>
+			<option value="2">TRANS_CENTER</option>
+			<option value="3" selected>TRANS_SPREAD</option>
+			<option value="4">TRANS_SLIDE</option>
+			<option value="5">TRANS_WIN8</option>
+		</select>
+		<input type="button" value="上一页" class="btn1">
+		<input type="button" value="下一页" class="btn2">
+	</div>
+	<script type="text/javascript">
+	var pages = [],len = 4,cur = 0,
+		// test
+		showInfo = function(){
+			var args = arguments,str = '', i = 0;
+			console.log(args);
+			while(i<args.length){
+				str += '\n>>>>\n'+i+':'+JSON.stringify(args[i]);
+				i++;
+			}
+			alert(args.length+str);
+		};
+	
+		/////////////////////////////////pagecontrol test
+		for (var i = 1; i <= len; i++) {
+			var page = sApp.Page.create('#page'+i);
+			pages.push(page);
+		}
+		pages[cur].show();
+		// test
+		document.addEventListener('click', function(e){
+			var obj = e.target;
+			switch(obj.className){
+				case 'btn1':
+					if (cur>0) {
+						cur--;
+						sApp.Page.back();
+					}
+				break;
+				case 'btn2':
+					if (cur<3) {
+						cur++;
+						console.log(cur,pages[cur]);
+						pages[cur].show();
+					}
+				break;
+			}
+		}, false);
+		document.querySelector('.sel1').addEventListener('change', function(e){
+			sApp.Page.setTrans(this.value);
+		}, false);
+		/////////////////////////////////quojs test
+		window.addEventListener("storage",function(e){
+			console.log(e);
+		},false);
+	</script>
+</body>
+</html>
