@@ -69,47 +69,35 @@ build by awen ~ 71752352@qq.com ~ 2013-10-10
 一个简单的html入口页面,一个配置文件再加上相应的模板，
 
 ###1 页面入口
-	<!doctype html>
-	<html lang="en">
-		<head>
-			<meta charset="UTF-8">
-			<title>app</title>
-				<!--样式-->
-				<link rel="stylesheet" href="dist/css/sapp.min.css">
-				<!--载入引擎-->
- 				<script src="dist/js/sapp.min.js"></script>
- 				<script src="dist/js/sapp.plus.min.js"></script>
- 				<!--载入应用配置文件和自定义函数-->
- 				<script src="demo.js"></script>
-				<!--入口-->
-				<script>
-					$(function(){
-						sApp.go(Config);	//Config 在demo中
-					});
-				</script>
-		</head>
-		<body>
-		<!--
+	<!--样式-->
+	<link rel="stylesheet" href="dist/css/sapp.min.css">
+	<!--载入引擎-->
+ 	<script src="dist/js/sapp.min.js"></script>
+ 	<script src="dist/js/sapp.plus.min.js"></script>
+ 	<!--载入应用配置文件和自定义函数-->
+ 	<script src="demo.js"></script>
+	<!--入口-->
+	<script>
+		$(function(){
+			sApp.go(Config);	//Config 在demo中
+		});
+	</script>
+
+	<!--
 		sApp页面设置区域，html设置区域
 		1 每个class=sapp_page 为一个页面；
 		2 每个class=sapp_render ,的dom元素，为一个渲染单元，他可以有自己的模板和数据接口
 	包含关系为  sapp_page_wrap>sapp_page>sapp_render(其实sapp_render可以不在sapp_page内)
-		-->
-			<section id="page_main"> //id "page_main"  对应配置中设定的页面key
-				<article id="part_slider"></article> //id "part_slider" 对应着page_main页面中的相应key的渲染单元
-			</section>
-		</body>
-	</html>
-	
-</body>
-</html>
+	-->
+	<section id="page_main"> //id "page_main"  对应配置中设定的页面key
+		<article id="part_slider"></article> //id "part_slider" 对应着page_main页面中的相应key的渲染单元
+	</section>
 
 ###2 页面配置文件
 这个配置文件就是配置页面用的，整个应用由，html的页面布局
 
 * 每个应用程序只有一个配置文件
  
-=============================
 结构说明
 
 	var Config = {
